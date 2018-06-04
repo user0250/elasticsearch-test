@@ -1,0 +1,14 @@
+{
+    "name": "yulo/elastisearch",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yulo",
+            "email": "uyy2244@gmail.com"
+        }
+    ],
+    "require": {
+        "elasticsearch/elasticsearch": "~6.0"
+    }
+}
