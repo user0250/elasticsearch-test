@@ -21,8 +21,8 @@ services:
     volumes:
       - ./www:/www
     links:
-      - elasticsearch:es
-  elasticsearch:
+      - es:es
+  es:
     image: elasticsearch
     container_name: es
     expose:

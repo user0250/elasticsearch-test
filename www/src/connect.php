@@ -1,13 +1,26 @@
 <?php
 
-require '../vendor/autoload.php';
+
+require './autoload.php';
 
 
-$client = Elasticsearch\ClientBuilder::create()
-    ->setHosts(['http://php:9200'])
+$host = [$config['host']];
+$client = \Elasticsearch\ClientBuilder::create()
+    ->setHosts($host)
     ->build();
-try{
-    print_r($client->info());
-}catch (\Exception $exception){
+print_r($client->ping());  //  1
 
-}
+
+$client = \Elasticsearch\ClientBuilder::create()
+    ->setHosts($host)
+    ->setRetries(0)
+    ->build();
+
+
+//$logger = Elasticsearch\ClientBuilder::defaultLogger('../logs/es.log',\Monolog\Logger::INFO);
+//$client = \Elasticsearch\ClientBuilder::create()
+//    ->setHosts($host)
+//    ->setLogger($logger)
+//    ->build();
+//
+//echo $client->ping();

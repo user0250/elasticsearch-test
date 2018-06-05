@@ -9,6 +9,7 @@
         }
     ],
     "require": {
-        "elasticsearch/elasticsearch": "~6.0"
+        "elasticsearch/elasticsearch": "~6.0",
+        "monolog/monolog": "1.*"
     }
 }
