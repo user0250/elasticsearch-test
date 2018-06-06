@@ -9,11 +9,13 @@
 
 require './autoload.php';
 $host = [$config['host']];
+
 $client = Elasticsearch\ClientBuilder::create()
     ->setHosts($host)
     ->build();
 $index = ['index' => 'test_index_1'];
 $result = $client->indices()->create($index);
+
 
 try{
 
